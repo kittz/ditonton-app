@@ -3,6 +3,7 @@ import 'package:movies/presentation/widgets/movie_card_list.dart';
 import 'package:tv_series/presentation/widgets/tv_series_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 import 'package:search/search.dart';
 
