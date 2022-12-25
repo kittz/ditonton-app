@@ -1,7 +1,7 @@
 import 'package:core/data/datasources/db/database_helper.dart';
 import 'package:mockito/annotations.dart';
-import 'package:http/http.dart' as http;
 import 'package:movies/movies.dart';
+import 'package:core/core.dart';
 
 @GenerateMocks([
   MovieRepository,
@@ -18,6 +18,7 @@ import 'package:movies/movies.dart';
   SaveWatchlist,
   RemoveWatchlist,
 ], customMocks: [
-  MockSpec<http.Client>(as: #MockHttpClient)
+  // MockSpec<http.Client>(as: #MockHttpClient),
+  MockSpec<SslPinning>(as: #MockHttpClient)
 ])
 void main() {}

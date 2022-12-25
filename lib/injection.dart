@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:core/data/datasources/db/database_helper.dart';
 import 'package:movies/movies.dart';
 import 'package:tv_series/tv_series.dart';
@@ -13,6 +14,9 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 
 void init() {
+  locator.registerLazySingleton<ToggleSearchNotifier>(
+      () => ToggleSearchNotifier());
+
   locator.registerFactory(
     () => MovieSearchNotifier(
       searchMovies: locator(),
@@ -127,6 +131,9 @@ void init() {
   locator.registerLazySingleton(() => SaveWatchlistTvSeries(locator()));
   locator.registerLazySingleton(() => RemoveWatchlistTvSeries(locator()));
   locator.registerLazySingleton(() => GetWatchlistTvSeries(locator()));
+
+  // SSL Pinning
+  locator.registerLazySingleton(() => SslPinning());
 
   // repository
   locator.registerLazySingleton<MovieRepository>(
