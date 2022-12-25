@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:movies/movies.dart';
 import 'package:tv_series/tv_series.dart';
 import 'package:flutter/material.dart';

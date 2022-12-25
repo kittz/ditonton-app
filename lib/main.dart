@@ -2,6 +2,8 @@ import 'package:core/core.dart';
 import 'package:core/utils/utils.dart';
 import 'package:about/about.dart';
 import 'package:core/presentation/pages/home_page.dart';
+import 'package:ditonton/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:movies/movies.dart';
 import 'package:tv_series/tv_series.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,7 +17,11 @@ import 'package:search/presentation/provider/tv_series_search_notifier.dart';
 import 'package:search/presentation/provider/movie_search_notifier.dart';
 import 'package:search/presentation/provider/toggle_search_notifier.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   di.init();
   runApp(MyApp());
 }
